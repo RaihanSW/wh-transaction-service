@@ -1,0 +1,1122 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/goods": {
+            "get": {
+                "description": "list all goods",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "goods"
+                ],
+                "summary": "list goods",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Bearer token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "create goods",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "goods"
+                ],
+                "summary": "create goods",
+                "parameters": [
+                    {
+                        "description": "Create Goods Request Body",
+                        "name": "GoodsRequest",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/request.GoodsRequest"
+                        }
+                    },
+                    {
+                        "type": "string",
+                        "description": "Bearer token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/goods/category": {
+            "get": {
+                "description": "list all goods categoryes",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "goods-category"
+                ],
+                "summary": "list goods categoryes",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Bearer token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "create goods category",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "goods-category"
+                ],
+                "summary": "create goods category",
+                "parameters": [
+                    {
+                        "description": "Create Goods Category Request Body",
+                        "name": "GoodsCategoryRequest",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/request.GoodsCategoryRequest"
+                        }
+                    },
+                    {
+                        "type": "string",
+                        "description": "Bearer token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/goods/category/{id}": {
+            "get": {
+                "description": "get goods category by id",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "goods-category"
+                ],
+                "summary": "get goods category by id",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Transaction Status ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Bearer token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "update goods category by id",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "goods-category"
+                ],
+                "summary": "update goods category by id",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Transaction Status ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Update Goods Category Request Body",
+                        "name": "GoodsCategoryRequest",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/request.GoodsCategoryRequest"
+                        }
+                    },
+                    {
+                        "type": "string",
+                        "description": "Bearer token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "delete goods category by id",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "goods-category"
+                ],
+                "summary": "delete goods category by id",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Transaction Status ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Bearer token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/goods/status": {
+            "get": {
+                "description": "list all goods statuses",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "goods-status"
+                ],
+                "summary": "list goods statuses",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Bearer token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "create goods status",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "goods-status"
+                ],
+                "summary": "create goods status",
+                "parameters": [
+                    {
+                        "description": "Create Goods Status Request Body",
+                        "name": "GoodsStatusRequest",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/request.GoodsStatusRequest"
+                        }
+                    },
+                    {
+                        "type": "string",
+                        "description": "Bearer token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/goods/status/{id}": {
+            "get": {
+                "description": "get goods status by id",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "goods-status"
+                ],
+                "summary": "get goods status by id",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Transaction Status ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Bearer token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "update goods status by id",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "goods-status"
+                ],
+                "summary": "update goods status by id",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Transaction Status ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Update Goods Status Request Body",
+                        "name": "GoodsStatusRequest",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/request.GoodsStatusRequest"
+                        }
+                    },
+                    {
+                        "type": "string",
+                        "description": "Bearer token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "delete goods status by id",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "goods-status"
+                ],
+                "summary": "delete goods status by id",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Transaction Status ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Bearer token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/goods/{uid}": {
+            "get": {
+                "description": "get goods by uid",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "goods"
+                ],
+                "summary": "get goods by uid",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Goods UID",
+                        "name": "uid",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Bearer token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "update goods by uid",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "goods"
+                ],
+                "summary": "update goods by uid",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Goods UID",
+                        "name": "uid",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Update Goods Request Body",
+                        "name": "GoodsRequest",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/request.GoodsRequest"
+                        }
+                    },
+                    {
+                        "type": "string",
+                        "description": "Bearer token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "delete goods by uid",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "goods"
+                ],
+                "summary": "delete goods by uid",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Goods UID",
+                        "name": "uid",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Bearer token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/transaction": {
+            "get": {
+                "description": "list all transactions",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "transaction"
+                ],
+                "summary": "list transactions",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Bearer token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "create transaction",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "transaction"
+                ],
+                "summary": "create transaction",
+                "parameters": [
+                    {
+                        "description": "Create Transaction Request Body",
+                        "name": "TransactionRequest",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/request.TransactionRequest"
+                        }
+                    },
+                    {
+                        "type": "string",
+                        "description": "Bearer token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/transaction/status": {
+            "get": {
+                "description": "list all transaction statuses",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "transaction-status"
+                ],
+                "summary": "list transaction statuses",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Bearer token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "create transaction status",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "transaction-status"
+                ],
+                "summary": "create transaction status",
+                "parameters": [
+                    {
+                        "description": "Create Transaction Status Request Body",
+                        "name": "TransactionStatusRequest",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/request.TransactionStatusRequest"
+                        }
+                    },
+                    {
+                        "type": "string",
+                        "description": "Bearer token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/transaction/status/{id}": {
+            "get": {
+                "description": "get transaction status by id",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "transaction-status"
+                ],
+                "summary": "get transaction status by id",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Transaction Status ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Bearer token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "update transaction status by id",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "transaction-status"
+                ],
+                "summary": "update transaction status by id",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Transaction Status ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Update Transaction Status Request Body",
+                        "name": "TransactionStatusRequest",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/request.TransactionStatusRequest"
+                        }
+                    },
+                    {
+                        "type": "string",
+                        "description": "Bearer token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "delete transaction status by id",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "transaction-status"
+                ],
+                "summary": "delete transaction status by id",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Transaction Status ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Bearer token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/transaction/{uid}": {
+            "get": {
+                "description": "get transaction by uid",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "transaction"
+                ],
+                "summary": "get transaction by uid",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Transaction UID",
+                        "name": "uid",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Bearer token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "update transaction by uid",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "transaction"
+                ],
+                "summary": "update transaction by uid",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Transaction UID",
+                        "name": "uid",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Update Transaction Request Body",
+                        "name": "TransactionRequest",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/request.TransactionRequest"
+                        }
+                    },
+                    {
+                        "type": "string",
+                        "description": "Bearer token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "delete transaction by uid",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "transaction"
+                ],
+                "summary": "delete transaction by uid",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Transaction UID",
+                        "name": "uid",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Bearer token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/httpresponse.SetResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "httpresponse.SetResponse": {
+            "type": "object",
+            "properties": {
+                "accessTime": {
+                    "type": "string"
+                },
+                "data": {},
+                "status": {
+                    "type": "string"
+                }
+            }
+        },
+        "request.GoodsCategoryRequest": {
+            "type": "object",
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "request.GoodsRequest": {
+            "type": "object",
+            "required": [
+                "category_id",
+                "status",
+                "transaction_uid"
+            ],
+            "properties": {
+                "category_id": {
+                    "type": "integer"
+                },
+                "dateprocess": {
+                    "type": "string"
+                },
+                "expired_date": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "integer"
+                },
+                "transaction_uid": {
+                    "type": "string"
+                }
+            }
+        },
+        "request.GoodsStatusRequest": {
+            "type": "object",
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "request.TransactionRequest": {
+            "type": "object",
+            "required": [
+                "code",
+                "status"
+            ],
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "dateprocess": {
+                    "type": "string"
+                },
+                "end_date": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "integer"
+                },
+                "ttl_volume": {
+                    "type": "integer"
+                },
+                "ttl_weight": {
+                    "type": "integer"
+                }
+            }
+        },
+        "request.TransactionStatusRequest": {
+            "type": "object",
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

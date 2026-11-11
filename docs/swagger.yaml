@@ -1,0 +1,739 @@
+definitions:
+  httpresponse.SetResponse:
+    properties:
+      accessTime:
+        type: string
+      data: {}
+      status:
+        type: string
+    type: object
+  request.GoodsCategoryRequest:
+    properties:
+      name:
+        type: string
+    required:
+    - name
+    type: object
+  request.GoodsRequest:
+    properties:
+      category_id:
+        type: integer
+      dateprocess:
+        type: string
+      expired_date:
+        type: string
+      status:
+        type: integer
+      transaction_uid:
+        type: string
+    required:
+    - category_id
+    - status
+    - transaction_uid
+    type: object
+  request.GoodsStatusRequest:
+    properties:
+      name:
+        type: string
+    required:
+    - name
+    type: object
+  request.TransactionRequest:
+    properties:
+      code:
+        type: string
+      dateprocess:
+        type: string
+      end_date:
+        type: string
+      status:
+        type: integer
+      ttl_volume:
+        type: integer
+      ttl_weight:
+        type: integer
+    required:
+    - code
+    - status
+    type: object
+  request.TransactionStatusRequest:
+    properties:
+      name:
+        type: string
+    required:
+    - name
+    type: object
+info:
+  contact: {}
+paths:
+  /goods:
+    get:
+      description: list all goods
+      parameters:
+      - description: Bearer token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+      summary: list goods
+      tags:
+      - goods
+    post:
+      description: create goods
+      parameters:
+      - description: Create Goods Request Body
+        in: body
+        name: GoodsRequest
+        required: true
+        schema:
+          $ref: '#/definitions/request.GoodsRequest'
+      - description: Bearer token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+      summary: create goods
+      tags:
+      - goods
+  /goods/{uid}:
+    delete:
+      description: delete goods by uid
+      parameters:
+      - description: Goods UID
+        in: path
+        name: uid
+        required: true
+        type: string
+      - description: Bearer token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+      summary: delete goods by uid
+      tags:
+      - goods
+    get:
+      description: get goods by uid
+      parameters:
+      - description: Goods UID
+        in: path
+        name: uid
+        required: true
+        type: string
+      - description: Bearer token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+      summary: get goods by uid
+      tags:
+      - goods
+    put:
+      description: update goods by uid
+      parameters:
+      - description: Goods UID
+        in: path
+        name: uid
+        required: true
+        type: string
+      - description: Update Goods Request Body
+        in: body
+        name: GoodsRequest
+        required: true
+        schema:
+          $ref: '#/definitions/request.GoodsRequest'
+      - description: Bearer token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+      summary: update goods by uid
+      tags:
+      - goods
+  /goods/category:
+    get:
+      description: list all goods categoryes
+      parameters:
+      - description: Bearer token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+      summary: list goods categoryes
+      tags:
+      - goods-category
+    post:
+      description: create goods category
+      parameters:
+      - description: Create Goods Category Request Body
+        in: body
+        name: GoodsCategoryRequest
+        required: true
+        schema:
+          $ref: '#/definitions/request.GoodsCategoryRequest'
+      - description: Bearer token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+      summary: create goods category
+      tags:
+      - goods-category
+  /goods/category/{id}:
+    delete:
+      description: delete goods category by id
+      parameters:
+      - description: Transaction Status ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Bearer token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+      summary: delete goods category by id
+      tags:
+      - goods-category
+    get:
+      description: get goods category by id
+      parameters:
+      - description: Transaction Status ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Bearer token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+      summary: get goods category by id
+      tags:
+      - goods-category
+    put:
+      description: update goods category by id
+      parameters:
+      - description: Transaction Status ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Goods Category Request Body
+        in: body
+        name: GoodsCategoryRequest
+        required: true
+        schema:
+          $ref: '#/definitions/request.GoodsCategoryRequest'
+      - description: Bearer token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+      summary: update goods category by id
+      tags:
+      - goods-category
+  /goods/status:
+    get:
+      description: list all goods statuses
+      parameters:
+      - description: Bearer token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+      summary: list goods statuses
+      tags:
+      - goods-status
+    post:
+      description: create goods status
+      parameters:
+      - description: Create Goods Status Request Body
+        in: body
+        name: GoodsStatusRequest
+        required: true
+        schema:
+          $ref: '#/definitions/request.GoodsStatusRequest'
+      - description: Bearer token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+      summary: create goods status
+      tags:
+      - goods-status
+  /goods/status/{id}:
+    delete:
+      description: delete goods status by id
+      parameters:
+      - description: Transaction Status ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Bearer token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+      summary: delete goods status by id
+      tags:
+      - goods-status
+    get:
+      description: get goods status by id
+      parameters:
+      - description: Transaction Status ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Bearer token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+      summary: get goods status by id
+      tags:
+      - goods-status
+    put:
+      description: update goods status by id
+      parameters:
+      - description: Transaction Status ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Goods Status Request Body
+        in: body
+        name: GoodsStatusRequest
+        required: true
+        schema:
+          $ref: '#/definitions/request.GoodsStatusRequest'
+      - description: Bearer token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+      summary: update goods status by id
+      tags:
+      - goods-status
+  /transaction:
+    get:
+      description: list all transactions
+      parameters:
+      - description: Bearer token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+      summary: list transactions
+      tags:
+      - transaction
+    post:
+      description: create transaction
+      parameters:
+      - description: Create Transaction Request Body
+        in: body
+        name: TransactionRequest
+        required: true
+        schema:
+          $ref: '#/definitions/request.TransactionRequest'
+      - description: Bearer token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+      summary: create transaction
+      tags:
+      - transaction
+  /transaction/{uid}:
+    delete:
+      description: delete transaction by uid
+      parameters:
+      - description: Transaction UID
+        in: path
+        name: uid
+        required: true
+        type: string
+      - description: Bearer token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+      summary: delete transaction by uid
+      tags:
+      - transaction
+    get:
+      description: get transaction by uid
+      parameters:
+      - description: Transaction UID
+        in: path
+        name: uid
+        required: true
+        type: string
+      - description: Bearer token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+      summary: get transaction by uid
+      tags:
+      - transaction
+    put:
+      description: update transaction by uid
+      parameters:
+      - description: Transaction UID
+        in: path
+        name: uid
+        required: true
+        type: string
+      - description: Update Transaction Request Body
+        in: body
+        name: TransactionRequest
+        required: true
+        schema:
+          $ref: '#/definitions/request.TransactionRequest'
+      - description: Bearer token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+      summary: update transaction by uid
+      tags:
+      - transaction
+  /transaction/status:
+    get:
+      description: list all transaction statuses
+      parameters:
+      - description: Bearer token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+      summary: list transaction statuses
+      tags:
+      - transaction-status
+    post:
+      description: create transaction status
+      parameters:
+      - description: Create Transaction Status Request Body
+        in: body
+        name: TransactionStatusRequest
+        required: true
+        schema:
+          $ref: '#/definitions/request.TransactionStatusRequest'
+      - description: Bearer token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+      summary: create transaction status
+      tags:
+      - transaction-status
+  /transaction/status/{id}:
+    delete:
+      description: delete transaction status by id
+      parameters:
+      - description: Transaction Status ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Bearer token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+      summary: delete transaction status by id
+      tags:
+      - transaction-status
+    get:
+      description: get transaction status by id
+      parameters:
+      - description: Transaction Status ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Bearer token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+      summary: get transaction status by id
+      tags:
+      - transaction-status
+    put:
+      description: update transaction status by id
+      parameters:
+      - description: Transaction Status ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update Transaction Status Request Body
+        in: body
+        name: TransactionStatusRequest
+        required: true
+        schema:
+          $ref: '#/definitions/request.TransactionStatusRequest'
+      - description: Bearer token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpresponse.SetResponse'
+      summary: update transaction status by id
+      tags:
+      - transaction-status
+swagger: "2.0"
