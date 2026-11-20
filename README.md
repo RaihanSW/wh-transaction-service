@@ -28,6 +28,8 @@ Isi di `application_local.json`:
 membuka koneksi `pgx` ke tiap key di map `database` dengan DSN
 `postgres://<username>:<password>@<hostname>/<dbname>`.
 
+Service logs use Go's standard `log/slog` package and are written to stdout.
+
 ### 2. Jalankan migration
 
 ```bash
@@ -109,7 +111,7 @@ Shortcut Makefile: `make migrate-up`, `make migrate-down STEPS=n`,
 
 ## Testing
 
-Unit test memakai stub hand-written (tanpa DB/redis/network), contoh:
+Unit test memakai stub hand-written (tanpa DB/network), contoh:
 `app/service/transaction_service_test.go` dan `app/service/goods_service_test.go`.
 
 ```bash

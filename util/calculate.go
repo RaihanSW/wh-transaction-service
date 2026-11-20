@@ -2,16 +2,28 @@ package util
 
 import (
 	"fmt"
+	"math"
 	"time"
-
-	"github.com/cinemaxxi-team/xxi-library/general"
 )
 
 func CalculateDistance(latSrc float64, longSrc float64, latDest float64, longDest float64) float64 {
 	if latSrc == 0 || longSrc == 0 || latDest == 0 || longDest == 0 {
 		return 0
 	}
-	return general.CalculateDistance(latSrc, longSrc, latDest, longDest)
+
+	latSrcRad := latSrc * math.Pi / 180
+	latDestRad := latDest * math.Pi / 180
+	deltaLat := (latDest - latSrc) * math.Pi / 180
+	deltaLong := (longDest - longSrc) * math.Pi / 180
+
+	a := math.Sin(deltaLat/2)*math.Sin(deltaLat/2) +
+		math.Cos(latSrcRad)*math.Cos(latDestRad)*
+			math.Sin(deltaLong/2)*math.Sin(deltaLong/2)
+	if a > 1 {
+		a = 1
+	}
+
+	return 6371.0088 * 2 * math.Atan2(math.Sqrt(a), math.Sqrt(1-a))
 }
 
 func CalculateDateToWIB(date string, timeFormat string, timeZone string) (dateTime time.Time, err error) {

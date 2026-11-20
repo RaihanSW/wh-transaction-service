@@ -34,8 +34,8 @@ func ErrorHandler(ctx context.Context, err error, status int, resp *response.Gen
 	resp.SetError(GetErrorMessage(err.Error()))
 	if status >= http.StatusInternalServerError {
 		resp.SetError(http.StatusText(http.StatusInternalServerError))
-		log.Logging.Errorln(util.RequestIDLog(ctx) + err.Error())
+		log.Logging.Error(util.RequestIDLog(ctx) + err.Error())
 		return
 	}
-	log.Logging.Warnln(util.RequestIDLog(ctx) + err.Error())
+	log.Logging.Warn(util.RequestIDLog(ctx) + err.Error())
 }
