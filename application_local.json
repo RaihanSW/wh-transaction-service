@@ -1,6 +1,6 @@
 {
     "secretkey": "NTY3RzU1M1l6NnI2RHUyNExuOVRSUHBXZTZ3R1NaMlQ=",
-    "service_name":"DC-TRANSACTION-SERVICE",
+    "service_name":"WH-TRANSACTION-SERVICE",
     "port": {
         "service": 4000,
         "servicetimeout": 15,
@@ -11,7 +11,7 @@
         "warehouse_db": {
             "driver": "postgresql",
             "username": "postgres",
-            "password": "6145@Cinema",
+            "password": "Vocaloid1!",
             "hostname": "localhost:5432",
             "dbname": "warehouse_db",
             "timeout": 5,

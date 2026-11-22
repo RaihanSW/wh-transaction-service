@@ -2,8 +2,8 @@ package service
 
 import (
 	"context"
-	"dc-transaction-service/app/repository"
-	"dc-transaction-service/config"
+	"wh-transaction-service/app/repository"
+	"wh-transaction-service/config"
 	"fmt"
 	"net/http"
 )

@@ -1,16 +1,16 @@
 package controller
 
 import (
-	"dc-transaction-service/app/controller/handler"
-	"dc-transaction-service/app/controller/handler/middleware"
-	"dc-transaction-service/app/model/constant"
-	"dc-transaction-service/config"
-	"dc-transaction-service/docs"
 	"fmt"
 	"log"
 	"net/http"
 	"strings"
 	"time"
+	"wh-transaction-service/app/controller/handler"
+	"wh-transaction-service/app/controller/handler/middleware"
+	"wh-transaction-service/app/model/constant"
+	"wh-transaction-service/config"
+	"wh-transaction-service/docs"
 
 	"github.com/go-chi/chi/v5"
 	httpSwagger "github.com/swaggo/http-swagger/v2"
@@ -52,6 +52,7 @@ func NewController(
 func (c *Controller) StartRoute() *http.Server {
 	r := chi.NewRouter()
 
+	r.Use(corsMiddleware())
 	r.Use(middleware.Middleware())
 
 	r.Get("/ping", middleware.SetRequestID(c.generalHandler.Ping))

@@ -1,6 +1,6 @@
 package response
 
-import "dc-transaction-service/app/model/entity"
+import "wh-transaction-service/app/model/entity"
 
 type TransactionResponse struct {
 	GeneralResponse

@@ -3,9 +3,9 @@ package repository
 import (
 	"context"
 	"database/sql"
-	"dc-transaction-service/app/model/entity"
-	"dc-transaction-service/app/repository/query"
-	"dc-transaction-service/config"
+	"wh-transaction-service/app/model/entity"
+	"wh-transaction-service/app/repository/query"
+	"wh-transaction-service/config"
 	"fmt"
 	"time"
 )

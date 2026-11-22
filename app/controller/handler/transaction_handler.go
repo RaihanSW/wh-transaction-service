@@ -1,11 +1,11 @@
 package handler
 
 import (
-	httpresponse "dc-transaction-service/app/controller/handler/httpResponse"
-	"dc-transaction-service/app/model/request"
-	"dc-transaction-service/app/model/response"
-	"dc-transaction-service/app/service"
-	"dc-transaction-service/util"
+	httpresponse "wh-transaction-service/app/controller/handler/httpResponse"
+	"wh-transaction-service/app/model/request"
+	"wh-transaction-service/app/model/response"
+	"wh-transaction-service/app/service"
+	"wh-transaction-service/util"
 	"encoding/json"
 	"net/http"
 

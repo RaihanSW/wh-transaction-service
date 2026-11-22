@@ -2,7 +2,7 @@ package repository
 
 import (
 	"context"
-	"dc-transaction-service/app/model/entity"
+	"wh-transaction-service/app/model/entity"
 )
 
 type GoodsCategoryRepositoryInterface interface {

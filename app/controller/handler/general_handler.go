@@ -1,9 +1,9 @@
 package handler
 
 import (
-	httpresponse "dc-transaction-service/app/controller/handler/httpResponse"
-	"dc-transaction-service/app/model/response"
-	"dc-transaction-service/app/service"
+	httpresponse "wh-transaction-service/app/controller/handler/httpResponse"
+	"wh-transaction-service/app/model/response"
+	"wh-transaction-service/app/service"
 	"net/http"
 )
 

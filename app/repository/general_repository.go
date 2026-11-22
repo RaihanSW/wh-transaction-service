@@ -3,7 +3,7 @@ package repository
 import (
 	"context"
 	"database/sql"
-	"dc-transaction-service/config"
+	"wh-transaction-service/config"
 	"fmt"
 	"time"
 )

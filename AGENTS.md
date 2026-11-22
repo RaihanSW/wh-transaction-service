@@ -1,4 +1,4 @@
-# dc-transaction-service — Agent Instructions
+# wh-transaction-service — Agent Instructions
 
 Go (chi) service template. Boilerplate ticket CRUD on schema `transaction_ticket` + warehouse tables on schema `"Transaction"`.
 

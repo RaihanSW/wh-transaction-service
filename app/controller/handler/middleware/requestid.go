@@ -3,7 +3,7 @@ package middleware
 import (
 	"context"
 	"crypto/rand"
-	"dc-transaction-service/util"
+	"wh-transaction-service/util"
 	"encoding/base64"
 	"net/http"
 )

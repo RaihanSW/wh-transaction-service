@@ -2,9 +2,9 @@ package httpresponse
 
 import (
 	"context"
-	"dc-transaction-service/app/model/response"
-	"dc-transaction-service/log"
-	"dc-transaction-service/util"
+	"wh-transaction-service/app/model/response"
+	"wh-transaction-service/log"
+	"wh-transaction-service/util"
 	"net/http"
 	"strings"
 )

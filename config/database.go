@@ -3,7 +3,7 @@ package config
 import (
 	"context"
 	"database/sql"
-	"dc-transaction-service/log"
+	"wh-transaction-service/log"
 	"fmt"
 	"net/url"
 	"time"

@@ -1,9 +1,10 @@
-module dc-transaction-service
+module wh-transaction-service
 
 go 1.21.10
 
 require (
 	github.com/go-chi/chi/v5 v5.2.0
+	github.com/go-chi/cors v1.2.2
 	github.com/go-sql-driver/mysql v1.6.0
 	github.com/google/uuid v1.6.0
 	github.com/jackc/pgx/v4 v4.18.2
